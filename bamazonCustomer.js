@@ -43,7 +43,22 @@ var buyPrompt = {
 	type: "input",
 	message: "Enter the ID of the product you'd like to buy!",
 	name: buy_prompt
-}
+};
+
+var quantityPrompt = {
+
+	type: "input",
+	message: "How many units would you like to buy?",
+	name: quantity_prompt
+};
+
+var startOverPrompt = {
+
+	type: "list",
+	message: "Make another purchase?",
+	choices: ["No", "Yes"],
+	name: start_over_prompt
+};
 
 //Asks user to buy a product
 
