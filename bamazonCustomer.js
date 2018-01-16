@@ -88,13 +88,36 @@ var buyProduct = function(res) {
 							var dbUpdate = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
 
 							var values = ["products", "stock_quantity", newStockTotal, "item_id", chooseProduct];
-}
+
+								connection.query(dbUpdate, values, function(err, res){
+
+										//Error logging for testing purposes
+									if(err) {
+
+										console.log(err);
+
+									}
+
+									//Giving the total to user
+									console.log("Your purchase has been made!" + "\n" + "Your total is: $" + cost);
+									inquirer.prompt([start_over_prompt]).then(function(inquirerResponse) {
+										
+										if (inquirerResponse.restart_prompt === "Yes") {
+											
+											showProducts();
+										  
+										} else {
+											
+											//Ends the connection if the user is done shopping
+											console.log("Thanks for shopping at Bamazon!");
+											connection.end();
+										  
+										}
+										})
+									  })
+									}
 
 //Asks the user if they'd like to buy something else or end the session
 
-function buyAgain() {
-
-
-}
 
 //Update our Bamazon DB with the sale information 
