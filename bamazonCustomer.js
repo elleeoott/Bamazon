@@ -63,8 +63,16 @@ var startOverPrompt = {
 
 //Asks user to buy a product
 
-var buyProduct = 
+var buyProduct = function(res) {
 
+	inquirer.prompt([buyPrompt]).then(function(inquirerResponse){
+		var chooseProduct = parseInt(inquirerResponse.buy_prompt);
+			for (var i=0; i <res.length; i++) {
+				if (res[i].item_id === chooseProduct){
+
+					var id = i;
+
+					inquirer.prompt([quantityPrompt]).then(function(inquirerResponse){
 
 
 }
