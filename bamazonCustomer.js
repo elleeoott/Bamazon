@@ -36,6 +36,15 @@ connection.connect(function(err) {
 		})
 }
 
+//Stores prompts for user interaction
+
+var buyPrompt = {
+
+	type: "input",
+	message: "Enter the ID of the product you'd like to buy!",
+	name: buy_prompt
+}
+
 //Asks user to buy a product
 
 function buyProduct() {
