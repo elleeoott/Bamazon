@@ -43,26 +43,27 @@ var startOverPrompt = {
 	name: start_over_prompt
 };
 
-  //Display items in store for user to select from
+  //Display items in store for user to select from on startup
 
-  function showProducts() {
+  var showProducts = function() {
 
     connection.query("SELECT * FROM products", function(err, res){
 		if (err) throw err;
 		console.log("-------------------------------------------------");
-		console.log("----Select from the following products-----------");
+		console.log("-------Select from the following products--------");
 		console.log("-------------------------------------------------");
 
 		for (i=0; i < res.length; i++) {
 			console.log("Item number: " + res[i].item_id + " // Product Name: " + res[i].product_name + " // Price: " + "$" + res[i].price + " // Quantity Left: " + res[i].stock_quantity)
 		}
 		console.log("-------------------------------------------------");
+		buyPrompt(res);
 		})
 }
 
 //Asks user to buy a product
 
-function buyProduct() {
+var buyProduct = 
 
 
 
