@@ -1,0 +1,29 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Package required to run Bamazon node/mysql faux-storefront.",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^5.0.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "Bam"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edarst/Bamazon.git"
+  },
+  "keywords": [
+    "Bamazon",
+    "Darst",
+    "Evan"
+  ],
+  "author": "Evan Darst",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edarst/Bamazon/issues"
+  },
+  "homepage": "https://github.com/edarst/Bamazon#readme"
+}
