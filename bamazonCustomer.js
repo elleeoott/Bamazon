@@ -19,23 +19,6 @@ connection.connect(function(err) {
     showProducts();
   });
 
-  //Display items in store
-
-  function showProducts() {
-
-    connection.query("SELECT * FROM products", function(err, res){
-		if (err) throw err;
-		console.log("-------------------------------------------------");
-		console.log("----Select from the following products-----------");
-		console.log("-------------------------------------------------");
-
-		for (i=0; i < res.length; i++) {
-			console.log("Item number: " + res[i].item_id + " // Product Name: " + res[i].product_name + " // Price: " + "$" + res[i].price + " // Quantity Left: " + res[i].stock_quantity)
-		}
-		console.log("-------------------------------------------------");
-		})
-}
-
 //Stores prompts for user interaction
 
 var buyPrompt = {
@@ -59,6 +42,23 @@ var startOverPrompt = {
 	choices: ["No", "Yes"],
 	name: start_over_prompt
 };
+
+  //Display items in store for user to select from
+
+  function showProducts() {
+
+    connection.query("SELECT * FROM products", function(err, res){
+		if (err) throw err;
+		console.log("-------------------------------------------------");
+		console.log("----Select from the following products-----------");
+		console.log("-------------------------------------------------");
+
+		for (i=0; i < res.length; i++) {
+			console.log("Item number: " + res[i].item_id + " // Product Name: " + res[i].product_name + " // Price: " + "$" + res[i].price + " // Quantity Left: " + res[i].stock_quantity)
+		}
+		console.log("-------------------------------------------------");
+		})
+}
 
 //Asks user to buy a product
 
