@@ -66,13 +66,17 @@ var startOverPrompt = {
 var buyProduct = function(res) {
 
 	inquirer.prompt([buyPrompt]).then(function(inquirerResponse){
+
 		var chooseProduct = parseInt(inquirerResponse.buy_prompt);
+
 			for (var i=0; i <res.length; i++) {
+
 				if (res[i].item_id === chooseProduct){
 
 					var id = i;
 
 					inquirer.prompt([quantityPrompt]).then(function(inquirerResponse){
+
 						var numberBought = parseInt(inquirerResponse.quantity_prompt);
 
 						if ((res[id].stock_quantity - numberBought) >= 0) {	
@@ -80,6 +84,10 @@ var buyProduct = function(res) {
 							var newStockTotal = res[id].stock_quantity - numberBought;
 
 							var cost = res[id].price * numberBought;
+
+							var dbUpdate = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+
+							var values = ["products", "stock_quantity", newStockTotal, "item_id", chooseProduct];
 }
 
 //Asks the user if they'd like to buy something else or end the session
