@@ -73,8 +73,13 @@ var buyProduct = function(res) {
 					var id = i;
 
 					inquirer.prompt([quantityPrompt]).then(function(inquirerResponse){
+						var numberBought = parseInt(inquirerResponse.quantity_prompt);
 
+						if ((res[id].stock_quantity - numberBought) >= 0) {	
 
+							var newStockTotal = res[id].stock_quantity - numberBought;
+
+							var cost = res[id].price * numberBought;
 }
 
 //Asks the user if they'd like to buy something else or end the session
