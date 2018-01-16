@@ -100,6 +100,8 @@ var buyProduct = function(res) {
 
 									//Giving the total to user
 									console.log("Your purchase has been made!" + "\n" + "Your total is: $" + cost);
+
+									//Asks the user if they'd like to buy something else or end the session
 									inquirer.prompt([start_over_prompt]).then(function(inquirerResponse) {
 										
 										if (inquirerResponse.restart_prompt === "Yes") {
@@ -117,7 +119,14 @@ var buyProduct = function(res) {
 									  })
 									}
 
-//Asks the user if they'd like to buy something else or end the session
-
-
-//Update our Bamazon DB with the sale information 
+									else {
+										
+										console.log("Sorry, your purchase cannot be completed as we are limited in stock. Please purchase fewer items than the total stock.");
+										
+										buyProduct(res);
+									  }
+									})
+								  }
+								}
+							  })
+							}
