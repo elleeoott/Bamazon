@@ -30,7 +30,7 @@ connection.connect(function(err) {
 		console.log("-------------------------------------------------");
 
 		for (i=0; i < res.length; i++) {
-			console.log("Item number: " + res[i].id + "Product Name: " + res[i].ProductName + " Price: " + "$" + res[i].Price + "(Quantity left: " + res[i].StockQuantity + ")")
+			console.log("Item number: " + res[i].item_id + " // Product Name: " + res[i].product_name + " // Price: " + "$" + res[i].price + " // Quantity Left: " + res[i].stock_quantity)
 		}
 		console.log("-------------------------------------------------");
 		})
@@ -51,4 +51,4 @@ function buyAgain() {
 
 }
 
-//Update our Bamazon DB with the sale information
+//Update our Bamazon DB with the sale information 
