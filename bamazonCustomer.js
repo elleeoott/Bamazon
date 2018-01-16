@@ -35,3 +35,20 @@ connection.connect(function(err) {
 		console.log("-------------------------------------------------");
 		})
 }
+
+//Asks user to buy a product
+
+function buyProduct() {
+
+
+
+}
+
+//Asks the user if they'd like to buy something else or end the session
+
+function buyAgain() {
+
+
+}
+
+//Update our Bamazon DB with the sale information
