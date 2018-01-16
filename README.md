@@ -8,6 +8,16 @@ PROCESS
 * Via JS, the stock quantity for the item chosen is updated in real time, just like a real store
 * The user is given their total cost and asked if they're done shopping, or ends the transaction
 
-CURRENT ISSUES
+## CURRENT ISSUES
 
 * First query is listed as "undefined"
+
+## TECHNOLOGIES
+
+* Node.js
+* mySQL
+* NPM Packages: inquirer, mysql
+
+## AUTHOR
+
+* Evan Darst, 2018
